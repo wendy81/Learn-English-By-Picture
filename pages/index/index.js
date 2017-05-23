@@ -3,7 +3,7 @@
 var getData = require('../..//utils/getData.js');
 var imagesWh = require('../..//utils/imagesWh.js');
 var getWordInfo = require('../..//utils/word.js');
-
+var imagesDataArry = [];
 Page({
   data: {
     images:null,
@@ -50,6 +50,10 @@ Page({
   },
   swiperChange: function(e) {
     var imagesData = this.data.images;
+    /*
+    * 切换swiper之后 硬性规定audioPlay为false,即不播放
+    */
+    this.setData({audioPlay: false});
     imagesData.map((v,i) => {
       /*
       * 当前current(表示swiper当前下标)变化时,会触发bindChange函数

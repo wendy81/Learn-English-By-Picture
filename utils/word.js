@@ -55,6 +55,9 @@ function getWordInfo(params,currentTargetWord) {
                 	"word": res.data.word
                 }
             });
+        },
+        fail: function(e) {
+            console.log(e);
         }
     });
 }
